@@ -9,13 +9,13 @@
       <label for="surname">Surname:</label>
       <input type="text" class="form-control" name="surname"><br>
       <label for="">Bet:</label>
-      <input type="number" class="form-control" name="bet"><br>
+      <input type="number" step=".01" class="form-control" name="bet"><br>
       <select name="horse_id"><br>
-        <option value="0">Choose a horse:</option>
-        @foreach ($horses as $horse)
+        <option value="0" selected>Choose a horse:</option>
+        @foreach ($horses->sortBy('name') as $horse)
         <option value={{$horse->id}}>{{$horse->name}}</option>
         @endforeach
-    </select>
+    </select><br><br>
       <input class="btn btn-primary" type="submit" value="SUBMIT">
     </div>
     @if ($errors->any())

@@ -10,8 +10,8 @@
       <input type="number" class="form-control" name="runs"><br>
       <label for="wins">Wins:</label>
       <input type="number" class="form-control" name="wins"><br>
-      <label for="about">About horse</label>
-      <textarea class="form-control" name="about" rows="5"></textarea><br>
+      <label for="about">About horse:</label>
+      <textarea class="form-control" id="about" name="about" rows="5"></textarea><br>
       <input class="btn btn-primary" type="submit" value="SUBMIT">
     </div>
     @if ($errors->any())

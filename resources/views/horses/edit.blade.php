@@ -11,7 +11,7 @@
       <input type="number" class="form-control" id="run" name="runs" value="{{ $horse['runs'] }}">
       <label for="win">Wins:</label>
       <input type="number" class="form-control" id="win" name="wins" value="{{ $horse['wins'] }}">
-      <label for="about">Example textarea</label>
+      <label for="about">About horse:</label>
       <textarea class="form-control" id="about" rows="3">{{$horse['about']}}</textarea>
       <br>
       <input class="btn btn-primary" type="submit" value="UPDATE">

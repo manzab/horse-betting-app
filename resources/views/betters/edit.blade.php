@@ -13,10 +13,11 @@
       <input type="number" step=".01" class="form-control" name="bet" value="{{ $better['bet'] }}"><br>
       <label for="horse_id">Choose horse:</label>
       <select name="horse_id"><br>
-        @foreach ($horses as $horse)
+        <option value="0" selected>Choose a horse:</option>
+        @foreach ($horses->sortBy('name') as $horse)
         <option value={{$horse['id']}}>{{$horse['name']}}</option>
         @endforeach
-    </select>
+    </select><br>
       <input class="btn btn-primary" type="submit" value="SUBMIT">
     </div>
     @if ($errors->any())

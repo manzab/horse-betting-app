@@ -13,9 +13,13 @@ class BetterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('betters.index', ['betters' => Better::all()]);
+        if (isset($request->horse_id) && $request->horse_id !== 0)
+            $betters = Better::where('horse_id', $request->horse_id)->orderBy('bet')->get();
+        else
+            $betters = Better::orderBy('bet')->get();
+        return view('betters.index', ['betters' => $betters, 'horses' => Horse::all()]);
     }
 
     /**

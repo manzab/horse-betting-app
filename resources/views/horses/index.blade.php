@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-    @foreach ($horses as $horse)
+    @foreach ($horses->sortBy('name') as $horse)
     <tr>
       <td>{{ $horse['name'] }} </td>
       <td>{{ $horse['runs'] }}</td>
