@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use PDF;
 use App\Models\Horse;
 use Illuminate\Http\Request;
 
@@ -16,6 +16,19 @@ class HorseController extends Controller
     {
         return view('horses.index', ['horses' => Horse::all()]);
     }
+
+    // Generate PDF
+    public function createPDF() {
+      // retreive all records from db
+      $data = Horse::all();
+      // share data to view
+      view()->share('horses',$data);
+      $pdf = PDF::loadView('pdf_view', $data);
+
+      // download PDF file with download method
+      return $pdf->download('horses_info.pdf');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -55,7 +68,7 @@ class HorseController extends Controller
      */
     public function show(Horse $horse)
     {
-        return view('horses.show_horse', compact('horse'));
+        return view('horses.show', compact('horse'));
     }
 
     /**

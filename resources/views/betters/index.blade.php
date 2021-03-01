@@ -1,8 +1,5 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
-<br>
-<br>
-<div class="container">
   <form class="form-inline" action="{{ route('betters.index') }}" method="GET">
     <select name="horse_id" class="form control btn-sm">
       <option value="" selected disabled>Choose horse to filter:</option>
@@ -38,7 +35,7 @@
             {{$better->horse['name']}}
           </td>
           <td>
-            <a class="btn btn-info" href="{{route('betters.edit', $better['id'])}}">UPDATE</a>
+            <a class="btn btn-primary" href="{{route('betters.edit', $better['id'])}}">UPDATE</a>
             <form style="display:inline" action="{{ route('betters.destroy', $better) }}" method="POST">
               @method('DELETE')
               @csrf
@@ -49,6 +46,5 @@
         @endforeach
       </tbody>
     </table>
-    <a class="btn btn-info" href="{{ route('betters.create')}}">CREATE NEW++</a>
-</div>
+    <a class="btn btn-success" href="{{ route('betters.create')}}">CREATE NEW++</a>
 @endsection

@@ -16,14 +16,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-
-// Route::get('/', function () {
-//     return view('horses.horses');
-// });
-
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/horses/pdf', [HorseController::class, 'createPDF']);
+    Route::get('/', [HorseController::class, 'index']);
     Route::resource('horses', HorseController::class);
     Route::resource('betters', BetterController::class);
 });

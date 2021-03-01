@@ -1,8 +1,5 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
-<br>
-<br>
-<div class="container">
 @if (session('status_success'))
 <p style="color: green"><b>{{ session('status_success') }}</b></p>
 @else
@@ -28,7 +25,7 @@
         {{$horse->betters->implode('name', ', ')}}
       </td>
       <td>
-        <a class="btn btn-info" href="{{route('horses.edit', $horse)}}">UPDATE</a>
+        <a class="btn btn-primary" href="{{route('horses.edit', $horse)}}">UPDATE</a>
         <form style="display:inline" action="{{ route('horses.destroy', $horse) }}" method="POST">
           @method('DELETE')
           @csrf
@@ -39,6 +36,6 @@
     @endforeach
   </tbody>
 </table>
-<a class="btn btn-info" href="{{ route('horses.create')}}">CREATE NEW++</a>
-</div>
+<a class="btn btn-success" href="{{ route('horses.create')}}">CREATE NEW++</a>
+<a class="btn btn-dark" href="{{ URL::to('/horses/pdf') }}">Export to PDF</a>
 @endsection

@@ -14,11 +14,11 @@ class CreateBettersTable extends Migration
     public function up()
     {
         Schema::create('betters', function (Blueprint $table) {
-            $table->integer('id', 11)->autoIncrement()->unsigned();
+            $table->integer('id')->autoIncrement()->unsigned();
             $table->string('name', 100);
             $table->string('surname', 150);
             $table->decimal('bet', 7, 2)->nullable();
-            $table->integer('horse_id')->length(11)->nullable()->unsigned()->default(null);
+            $table->integer('horse_id')->length(11)->nullable()->unsigned();
             $table->foreign('horse_id')->references('id')->on('horses')->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });

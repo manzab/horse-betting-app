@@ -1,6 +1,5 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
-<div class="container mt-5">
   <form method="POST" action="{{route('horses.update', $horse)}}">
     @method('PUT')
     @csrf
@@ -24,5 +23,4 @@
     </div>
     @endif
   </form>
-</div>
 @endsection

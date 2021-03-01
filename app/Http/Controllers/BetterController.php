@@ -59,7 +59,7 @@ class BetterController extends Controller
      */
     public function show(Better $better)
     {
-        return view('betters.show_better', compact('better'));
+        return view('betters.show', compact('better'));
     }
 
     /**
@@ -101,7 +101,8 @@ class BetterController extends Controller
      */
     public function destroy(Better $better)
     {
-        $better->delete();
-        return redirect('/betters')->with('status_success', 'Better deleted!');
+        return  $better->delete() ? 
+        redirect('/betters')->with('status_success', 'Better deleted!') :
+            redirect('/betters')->with('status_error', 'Better was not deleted!');
     }
 }

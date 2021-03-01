@@ -1,10 +1,9 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
-<div class="container mt-5">
   <form method="POST" action="{{route('betters.store')}}">
     @csrf
     <div class="form-group">
-      <label for="name">Better:</label>
+      <label for="name">Name:</label>
       <input type="text" class="form-control" name="name"><br>
       <label for="surname">Surname:</label>
       <input type="text" class="form-control" name="surname"><br>
@@ -26,5 +25,4 @@
     </div>
     @endif
   </form>
-</div>
 @endsection

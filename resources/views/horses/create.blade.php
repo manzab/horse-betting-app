@@ -1,6 +1,5 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
-<div class="container mt-5">
   <form method="POST" action="{{route('horses.store')}}">
     @csrf
     <div class="form-group">
@@ -22,5 +21,4 @@
     </div>
     @endif
   </form>
-</div>
 @endsection
