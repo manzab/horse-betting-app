@@ -23,7 +23,7 @@ php artisan migrate:refresh --seed
 - Login with one of the seeded users credentials
 
 ## Screenshots 
-![image](https://user-images.githubusercontent.com/59610142/109552658-bef33080-7ada-11eb-902d-7d9f813a6b65.png)
+![image](https://user-images.githubusercontent.com/59610142/109554423-ddf2c200-7adc-11eb-9b97-a544000898fb.png)
 ![image](https://user-images.githubusercontent.com/59610142/109552759-dd592c00-7ada-11eb-9022-2d6fe8d0aedb.png)
 ![image](https://user-images.githubusercontent.com/59610142/109552823-f1049280-7ada-11eb-8c6b-72a8eabd9f39.png)
 ![image](https://user-images.githubusercontent.com/59610142/109553522-ccf58100-7adb-11eb-9edd-a463b460399f.png)
